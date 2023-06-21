@@ -5,7 +5,11 @@ public enum StudyProfile {
     ENGINEERING("Инжиниринг"),
     MEDICINE("Медицина"),
     PROGRAMMING("Программирование"),
-    MUSIC("Музыка");
+    MUSIC("Музыка"),
+    MATHEMATICS("Математика"),
+    LINGUISTICS("Лингвистика"),
+    PHYSICS("Физика"),
+    UNKNOWN("Не задано");
 
     String profileName;
 
