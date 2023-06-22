@@ -1,7 +1,7 @@
 package org.example;
 
 public class University {
-    String id, fullName, shortName;
+    String id, fullname, shortName;
     int yearOfFoundation;
     StudyProfile mainProfile;
 
@@ -40,7 +40,7 @@ public class University {
 
         public University build(){
             University university = new University();
-            university.fullName = this.fullName;
+            university.fullname = this.fullName;
             university.id = this.id;
             university.mainProfile = this.mainProfile;
             university.shortName = this.shortName;
@@ -53,10 +53,32 @@ public class University {
     public String toString() {
         return "University{" +
                 "id='" + id + '\'' +
-                ", fullName='" + fullName + '\'' +
+                ", fullName='" + fullname + '\'' +
                 ", shortName='" + shortName + '\'' +
                 ", yearOfFoundation=" + yearOfFoundation +
                 ", mainProfile=" + mainProfile +
                 '}';
+    }
+
+    // Getters ---------
+
+    public String getId() {
+        return id;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public int getYearOfFoundation() {
+        return yearOfFoundation;
+    }
+
+    public StudyProfile getMainProfile() {
+        return mainProfile;
     }
 }

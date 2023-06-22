@@ -8,7 +8,7 @@ public class Student {
     public Student() {
     }
 
-    public static class Builder{
+    public static class Builder {
         String fullName, universityId;
         int currentCourseNumber;
         float avgExamScore;
@@ -33,7 +33,7 @@ public class Student {
             return this;
         }
 
-        public Student build(){
+        public Student build() {
             Student student = new Student();
             student.avgExamScore = this.avgExamScore;
             student.universityId = this.universityId;
@@ -52,4 +52,27 @@ public class Student {
                 ", avgExamScore=" + avgExamScore +
                 '}';
     }
+
+    // getters------------------
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getUniversityId() {
+        return universityId;
+    }
+
+    public int getCurrentCourseNumber() {
+        return currentCourseNumber;
+    }
+
+    public float getAvgExamScore() {
+        return avgExamScore;
+    }
 }
+
+
+
+
+
