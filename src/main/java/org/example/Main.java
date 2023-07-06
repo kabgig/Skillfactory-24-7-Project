@@ -1,34 +1,65 @@
 package org.example;
 
-import org.example.comparators.*;
-import org.example.enums.StudentComparatorsEnums;
-import org.example.enums.UniversityComparatorsEnums;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        var studentComparator = ComparatorController
-                .studentComparatorStarter
-                        (StudentComparatorsEnums.FULLNAME);
+        System.out.println("""
+        4. В методе main выполнить сериализацию коллекций, вывести получившиеся JSON-строки в консоль.
+                """);
 
-        var universityComparator = ComparatorController
-                .universityComparatorStarter
-                        (UniversityComparatorsEnums.FULLNAME);
+        List<String> studentJsons = new StudentReader()
+                .readInfo()
+                .stream()
+                .map(student -> JsonUtil.serializeStudent(student))
+                .peek(System.out::println)
+                .toList();
 
-        //----------------------------------
-        System.out.println("Sorted students----------------\n");
+        List<String> universityJsons = new UniversityReader()
+                .readInfo()
+                .stream()
+                .map(uni -> JsonUtil.serializeUniversity(uni))
+                .peek(System.out::println)
+                .toList();
+
+
+       // 5. В методе main выполнить десериализацию полученных строк, сохранить результаты в новые коллекции.
+        List<Student> newStudentList = JsonUtil.deSerializeStudentJsons(studentJsons);
+        List<University> newUniversityList = JsonUtil.deSerializeUniversityJsons(universityJsons);
+
+        System.out.println("""
+                
+        6. Сравнить количество элементов в исходной и в десериализованной коллекциях, чтобы убедиться, что десериализация выполняется корректно.
+                """);
+        System.out.println("studentJsons: " + studentJsons.size());
+        System.out.println("newStudentList: " + newStudentList.size());
+        System.out.println("universityJsons: " + universityJsons.size());
+        System.out.println("newUniversityList: " + newUniversityList.size());
+
+        System.out.println("""
+               
+         7. С помощью Java Stream API выполнить для исходных коллекций сериализацию отдельных элементов.
+         8. Там же внутри стрима выводить получающиеся JSON-строки.
+         9. Там же внутри стрима десериализовывать объекты из полученных JSON-строк.
+         10. Там же внутри стрима выводить десериализованные объекты на печать, чтобы убедиться в корректности операции.
+                
+                """);
+
         new StudentReader()
                 .readInfo()
                 .stream()
-                .sorted(studentComparator)
-                .forEach(System.out::println);
+                .map(JsonUtil::serializeStudent) // 7
+                .peek(System.out::println)// 8
+                .map(JsonUtil::deSerializeStudent)// 9
+                .forEach(System.out::println); // 10
 
-        System.out.println("Sorted universities------------\n");
         new UniversityReader()
                 .readInfo()
                 .stream()
-                .sorted(universityComparator)
+                .map(JsonUtil::serializeUniversity)
+                .peek(System.out::println)
+                .map(JsonUtil::deSerializeUniversity)
                 .forEach(System.out::println);
-
     }
 }

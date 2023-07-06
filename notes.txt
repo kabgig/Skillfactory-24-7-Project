@@ -1,0 +1,23 @@
+//        var studentComparator = ComparatorController
+//                .studentComparatorStarter
+//                        (StudentComparatorsEnums.FULLNAME);
+//
+//        var universityComparator = ComparatorController
+//                .universityComparatorStarter
+//                        (UniversityComparatorsEnums.FULLNAME);
+//
+//        //----------------------------------
+//        System.out.println("Sorted students----------------\n");
+//        new StudentReader()
+//                .readInfo()
+//                .stream()
+//                .sorted(studentComparator)
+//                .forEach(System.out::println);
+//
+//        System.out.println("Sorted universities------------\n");
+//        new UniversityReader()
+//                .readInfo()
+//                .stream()
+//                .sorted(universityComparator)
+//                .forEach(System.out::println);
+
