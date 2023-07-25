@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class XlsWriter {
+    private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
+
     public void generateTable(List<Statistics> statisticObjects, String urlToFile) {
 
         try (XSSFWorkbook workbook = new XSSFWorkbook();
@@ -27,6 +30,7 @@ public class XlsWriter {
             font.setFontHeight(14);
             XSSFCellStyle style = workbook.createCellStyle();
             style.setFont(font);
+            logger.info("sheet and styles are created");
 
 //creating header
             XSSFRow row1 = sheet.createRow(0);
@@ -40,6 +44,7 @@ public class XlsWriter {
             cellC.setCellValue("Amount Of Students");
             cellD.setCellValue("Amount Of Universities");
             cellE.setCellValue("University Names");
+            logger.info("Header is created");
 
 //setting style
             cellA.setCellStyle(style);
@@ -47,6 +52,7 @@ public class XlsWriter {
             cellC.setCellStyle(style);
             cellD.setCellStyle(style);
             cellE.setCellStyle(style);
+            logger.info("style is set");
 
 //filling table from statistics
             for (int i = 0; i < statisticObjects.size(); i++) {
@@ -66,9 +72,12 @@ public class XlsWriter {
                         .collect(Collectors.joining(", ")));
             }
             workbook.write(fos);
+            logger.info("Table is filled from statistics");
         } catch (FileNotFoundException e) {
+            logger.severe("FileNotFoundException " + e );
             throw new RuntimeException(e);
         } catch (IOException e) {
+            logger.severe("RuntimeException " + e );
             throw new RuntimeException(e);
         }
     }

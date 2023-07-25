@@ -9,8 +9,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class StudentReader {
+    private static final Logger logger = Logger.getLogger(StudentReader.class.getName());
+
     List<Student> studentList = new ArrayList<>();
     public List<Student> readInfo() {
         try (var stream = new FileInputStream("src/main/resources/universityInfo.xlsx")) {
@@ -28,8 +31,10 @@ public class StudentReader {
                         .build());
             }
         } catch (IOException e) {
+            logger.severe("Exception " + e);
             throw new RuntimeException(e);
         }
+        logger.info("studentList created and returned");
         return studentList;
     }
 }

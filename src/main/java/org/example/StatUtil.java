@@ -1,9 +1,12 @@
 package org.example;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class StatUtil {
+    private static final Logger logger = Logger.getLogger(StatUtil.class.getName());
+
     public List<Statistics> processStats(List<Student> studentList, List<University> universityList) {
         List<Statistics> statistics = new ArrayList<>();
 
@@ -15,6 +18,8 @@ public class StatUtil {
                     st.setMainProfile(profile);
                     statistics.add(st);
                 });
+        logger.info("Distinct PROFILE statistics created");
+
 
         for (var uni : universityList) {
             statistics.stream()
@@ -22,6 +27,7 @@ public class StatUtil {
                     .findFirst()
                     .ifPresent(st -> addUniAndStudentToStat(uni, st, studentList));
         }
+        logger.info("Returning statistics list");
         return statistics;
     }
 
@@ -31,6 +37,7 @@ public class StatUtil {
                 .stream()
                 .filter(student -> student.getUniversityId().equals(uni.getId()))
                 .collect(Collectors.toList());
+        logger.info("students filtered");
 
         float averageScore = 0;
         if (!filteredStudents.isEmpty()) {
@@ -40,10 +47,12 @@ public class StatUtil {
                     .reduce((a, b) -> Float.sum(a, b))
                     .get() / (float) filteredStudents.size();
         }
+        logger.info("got average score");
 
         st.setAmountOfStudentsOnProfile(st.getAmountOfStudentsOnProfile() + filteredStudents.size());
         st.addToAvgExamScore(averageScore);
         st.setAmountOfUniversitiesOnProfile(st.getAmountOfUniversitiesOnProfile() + 1);
         st.getUniversityNames().add(uni.getFullname());
+        logger.info("University " + uni.getShortName() + " and students added to statistics");
     }
 }

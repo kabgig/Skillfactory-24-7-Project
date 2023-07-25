@@ -1,9 +1,19 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.LogManager;
 
 public class Main {
     public static void main(String[] args) {
+
+        try {
+            LogManager.getLogManager().readConfiguration(
+                    Main.class.getResourceAsStream("/logging.properties"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         List<Student> students = new StudentReader().readInfo();
         List<University> universities = new UniversityReader().readInfo();
 
