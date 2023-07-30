@@ -19546,3 +19546,207 @@
 	<logger>org.example.UniversityReader</logger>
 	<message>studentList created and returned</message>
 </logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442749</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>studentList created and returned</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442770</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>universityList is created and returned</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442771</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Distinct PROFILE statistics created</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442772</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442772</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442773</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University МВУ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442773</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442773</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442773</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University МПИ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442773</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442774</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442774</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University МГМУ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442774</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442774</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442774</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University ТУМ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University СМИ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442775</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University ВЛПУ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442776</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>students filtered</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442776</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>got average score</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442776</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>University КУВ and students added to statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442776</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Returning statistics list</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442803</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>sheet and styles are created</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442804</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Header is created</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442804</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>style is set</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442851</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Table is filled from statistics</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442916</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Data is marshalled to XML format</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442918</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Data is written to file: xmlReqs/req_2023-07-30.xml</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442935</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Data is serialized</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442935</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>Data is written to file: jsonReqs/req_2023-07-30.json</message>
+</logRecord>
+<logRecord>
+	<level>INFO</level>
+	<timestamp>1690709442950</timestamp>
+	<logger>org.example.UniversityReader</logger>
+	<message>studentList created and returned</message>
+</logRecord>

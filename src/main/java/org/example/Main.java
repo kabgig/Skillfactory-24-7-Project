@@ -46,7 +46,8 @@ public class Main {
                 .readInfo())
                 //.peek(System.out::println)
                 .toList();
-        List<? extends Entity> entities = JsonUtil.deSerializeJsonsList(studentJsons, Student.class);
+        List<Student> entities = JsonUtil.deSerializeJsonsList(studentJsons, Student.class);
+        entities.stream().forEach(System.out::println);
 
 
 

@@ -26,11 +26,22 @@ public class JsonUtil {
     }
 
     //DESERIALIZATION------------
-    public static Entity deserializeJson(String entityJson, Class<? extends Entity> clazz){
+    public static <E extends Entity> E deserializeJson(String entityJson, Class<E> clazz){
         return getGson().fromJson(entityJson, clazz);
     }
 
-    public static List<? extends Entity> deSerializeJsonsList(List<String> JsonList, Class<? extends Entity> clazz){
+    public static <E extends Entity> List<E> deSerializeJsonsList(List<String> JsonList, Class<E> clazz){
         return JsonList.stream().map(Json -> deserializeJson(Json,clazz)).toList();
     }
+
+
+    //--------------
+
+//    public static Entity deserializeJson(String entityJson, Class<? extends Entity> clazz){
+//        return getGson().fromJson(entityJson, clazz);
+//    }
+//
+//    public static List<? extends Entity> deSerializeJsonsList(List<String> JsonList, Class<? extends Entity> clazz){
+//        return JsonList.stream().map(Json -> deserializeJson(Json,clazz)).toList();
+//    }
 }
