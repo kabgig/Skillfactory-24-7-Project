@@ -1,5 +1,7 @@
 package org.example;
 
+import com.google.gson.annotations.SerializedName;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -11,11 +13,16 @@ import java.util.List;
 
 @XmlType(propOrder={"mainProfile", "avgExamScore"})
 @XmlRootElement
-public class Statistics {
+public class Statistics extends Entity {
+    @SerializedName("Main profile")
     StudyProfile mainProfile;
+    @SerializedName("Average exam score")
     ArrayList<Float> avgExamScore;
+    @SerializedName("Students on profile")
     int amountOfStudentsOnProfile;
+    @SerializedName("Universities on profile")
     int amountOfUniversitiesOnProfile;
+    @SerializedName("Universities names")
     List<String> universityNames;
 
     public Statistics() {

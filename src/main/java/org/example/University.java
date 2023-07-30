@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder={"id", "fullname" , "mainProfile" })
 @XmlRootElement
-public class University {
+public class University extends Entity {
 
     @SerializedName("University id")
     String id;

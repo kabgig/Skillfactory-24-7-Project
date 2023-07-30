@@ -5,6 +5,7 @@ import org.example.writers.XmlWriter;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -23,7 +24,7 @@ public class Main {
 
         StatUtil statUtil = new StatUtil();
         List<Statistics> statistics = statUtil.processStats(students, universities);
-        new XlsWriter().generateTable(statistics,"ResultTable.xlsx");
+        new XlsWriter().generateTable(statistics, "ResultTable.xlsx");
 //----------------
         Root root = new Root();
 
@@ -39,6 +40,13 @@ public class Main {
 
         JsonWriter jsonWriter = new JsonWriter();
         jsonWriter.write(root);
+
+        //-----test
+        List<String> studentJsons = JsonUtil.serializeList(new StudentReader()
+                .readInfo())
+                //.peek(System.out::println)
+                .toList();
+        List<? extends Entity> entities = JsonUtil.deSerializeJsonsList(studentJsons, Student.class);
 
 
 

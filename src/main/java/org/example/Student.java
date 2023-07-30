@@ -2,14 +2,13 @@ package org.example;
 
 import com.google.gson.annotations.SerializedName;
 
-import javax.xml.bind.annotation.XmlAccessorOrder;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder={"fullName", "universityId" , "avgExamScore" })
 @XmlRootElement
-public class Student {
+public class Student extends Entity {
     @SerializedName("Student Fullname")
     String fullName;
     @SerializedName("University id")

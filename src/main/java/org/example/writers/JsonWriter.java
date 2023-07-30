@@ -16,13 +16,13 @@ public class JsonWriter {
 
         List<String> studentJsons = root.getStudentList()
                 .stream()
-                .map(student -> JsonUtil.serializeStudent(student))
+                .map(student -> JsonUtil.serializeEntity(student))
                 //.peek(System.out::println)
                 .toList();
 
         List<String> universityJsons = root.getUniversitiesInfo()
                 .stream()
-                .map(uni -> JsonUtil.serializeUniversity(uni))
+                .map(uni -> JsonUtil.serializeEntity(uni))
                 //.peek(System.out::println)
                 .toList();
 
