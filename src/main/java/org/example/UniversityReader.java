@@ -9,11 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
+
+import static org.example.Lgr.logger;
 
 public class UniversityReader {
-    private static final Logger logger = Logger.getLogger(UniversityReader.class.getName());
-
     List<University> universityList = new ArrayList<>();
     public List<University> readInfo() {
         try (var stream = new FileInputStream("src/main/resources/universityInfo.xlsx")) {

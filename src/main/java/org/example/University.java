@@ -2,6 +2,12 @@ package org.example;
 
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder={"id", "fullname" , "mainProfile" })
+@XmlRootElement
 public class University {
 
     @SerializedName("University id")
@@ -72,10 +78,12 @@ public class University {
 
     // Getters ---------
 
+    @XmlElement(name = "universityId")
     public String getId() {
         return id;
     }
 
+    @XmlElement(name = "universityName")
     public String getFullname() {
         return fullname;
     }
@@ -88,6 +96,7 @@ public class University {
         return yearOfFoundation;
     }
 
+    @XmlElement(name = "universityProfile")
     public StudyProfile getMainProfile() {
         return mainProfile;
     }

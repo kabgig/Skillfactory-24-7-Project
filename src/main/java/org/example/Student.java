@@ -2,6 +2,13 @@ package org.example;
 
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.XmlAccessorOrder;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder={"fullName", "universityId" , "avgExamScore" })
+@XmlRootElement
 public class Student {
     @SerializedName("Student Fullname")
     String fullName;
@@ -42,10 +49,10 @@ public class Student {
 
         public Student build() {
             Student student = new Student();
-            student.avgExamScore = this.avgExamScore;
-            student.universityId = this.universityId;
-            student.currentCourseNumber = this.currentCourseNumber;
             student.fullName = this.fullName;
+            student.universityId = this.universityId;
+            student.avgExamScore = this.avgExamScore;
+            student.currentCourseNumber = this.currentCourseNumber;
             return student;
         }
     }
@@ -62,10 +69,12 @@ public class Student {
 
     // getters------------------
 
+    @XmlElement(name = "studentName")
     public String getFullName() {
         return fullName;
     }
 
+    @XmlElement(name = "universityId")
     public String getUniversityId() {
         return universityId;
     }
@@ -74,6 +83,7 @@ public class Student {
         return currentCourseNumber;
     }
 
+    @XmlElement(name = "avgScore")
     public float getAvgExamScore() {
         return avgExamScore;
     }

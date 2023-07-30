@@ -1,10 +1,16 @@
 package org.example;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlType(propOrder={"mainProfile", "avgExamScore"})
+@XmlRootElement
 public class Statistics {
     StudyProfile mainProfile;
     ArrayList<Float> avgExamScore;
@@ -17,6 +23,7 @@ public class Statistics {
        this.avgExamScore = new ArrayList<>();
     }
 
+    @XmlElement(name = "universityProfile")
     public StudyProfile getMainProfile() {
         return mainProfile;
     }
@@ -25,6 +32,7 @@ public class Statistics {
         this.mainProfile = mainProfile;
     }
 
+    @XmlElement(name = "avgScore")
     public float getAvgExamScore() {
         float result = 0;
         for (var i: avgExamScore){
@@ -42,6 +50,7 @@ public class Statistics {
         this.avgExamScore.add(score);
     }
 
+    @XmlTransient
     public int getAmountOfStudentsOnProfile() {
         return amountOfStudentsOnProfile;
     }
@@ -50,6 +59,7 @@ public class Statistics {
         this.amountOfStudentsOnProfile = amountOfStudentsOnProfile;
     }
 
+    @XmlTransient
     public int getAmountOfUniversitiesOnProfile() {
         return amountOfUniversitiesOnProfile;
     }
@@ -58,6 +68,7 @@ public class Statistics {
         this.amountOfUniversitiesOnProfile = amountOfUniversitiesOnProfile;
     }
 
+    @XmlTransient
     public List<String> getUniversityNames() {
         return universityNames;
     }

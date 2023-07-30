@@ -1,25 +1,45 @@
 package org.example;
 
+import org.example.writers.JsonWriter;
+import org.example.writers.XmlWriter;
+
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.logging.LogManager;
 
 public class Main {
     public static void main(String[] args) {
-
+// LOGS----------
         try {
             LogManager.getLogManager().readConfiguration(
                     Main.class.getResourceAsStream("/logging.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+//----------------
         List<Student> students = new StudentReader().readInfo();
         List<University> universities = new UniversityReader().readInfo();
 
         StatUtil statUtil = new StatUtil();
         List<Statistics> statistics = statUtil.processStats(students, universities);
         new XlsWriter().generateTable(statistics,"ResultTable.xlsx");
+//----------------
+        Root root = new Root();
+
+        root.setLocalDateTime(LocalDateTime.now());
+
+        root.setStudentList(students);
+        root.setUniversitiesInfo(universities);
+        root.setStatisticalInfo(statistics);
+
+
+        XmlWriter w = new XmlWriter();
+        w.write(root);
+
+        JsonWriter jsonWriter = new JsonWriter();
+        jsonWriter.write(root);
+
 
 
 //        System.out.println("""

@@ -5,17 +5,13 @@ import org.apache.poi.xssf.usermodel.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
+import static org.example.Lgr.logger;
 
 public class XlsWriter {
-    private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
-
     public void generateTable(List<Statistics> statisticObjects, String urlToFile) {
 
         try (XSSFWorkbook workbook = new XSSFWorkbook();
