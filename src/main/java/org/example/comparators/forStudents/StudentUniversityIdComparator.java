@@ -1,7 +1,7 @@
 package org.example.comparators.forStudents;
 
 import org.apache.commons.lang3.StringUtils;
-import org.example.Student;
+import org.example.entities.Student;
 import org.example.interfaces.StudentComparatorInterface;
 
 public class StudentUniversityIdComparator implements StudentComparatorInterface {

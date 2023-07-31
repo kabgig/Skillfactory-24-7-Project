@@ -1,7 +1,7 @@
 package org.example.comparators.forUniversities;
 
 import org.apache.commons.lang3.StringUtils;
-import org.example.University;
+import org.example.entities.University;
 import org.example.interfaces.UniversityComparatorInterface;
 
 public class UniversityShortNameComparator implements UniversityComparatorInterface {

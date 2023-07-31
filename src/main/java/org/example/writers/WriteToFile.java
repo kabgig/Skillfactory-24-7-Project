@@ -12,6 +12,7 @@ public class WriteToFile {
     public static void writeToFile(String data, String filePath) throws IOException {
         Path path = Paths.get(filePath);
         Files.createDirectories(path.getParent());
+        logger.info("Path is created: " + path);
 
         try (FileWriter fileWriter = new FileWriter(filePath)) {
             fileWriter.write(data);

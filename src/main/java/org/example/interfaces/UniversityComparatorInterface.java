@@ -1,6 +1,6 @@
 package org.example.interfaces;
 
-import org.example.University;
+import org.example.entities.University;
 
 import java.util.Comparator;
 

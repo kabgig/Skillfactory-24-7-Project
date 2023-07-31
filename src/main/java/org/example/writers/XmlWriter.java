@@ -14,8 +14,6 @@ import static org.example.writers.WriteToFile.writeToFile;
 
 public class XmlWriter {
     public void write(Root root) {
-
-        //MARSHALLING------------------------
         StringWriter writer = new StringWriter();
         Marshaller marshaller = null;
         try {
@@ -26,12 +24,13 @@ public class XmlWriter {
             String xmlString = writer.toString();
             String s = LocalDate.now().toString();
             String filePath = "xmlReqs/req_" + s + ".xml";
-            //System.out.println(xmlString);
             logger.info("Data is marshalled to XML format");
             writeToFile(xmlString, filePath);
         } catch (JAXBException e) {
+            logger.severe("JAXBException" + e);
             throw new RuntimeException(e);
         } catch (IOException e) {
+            logger.severe("IOException" + e);
             throw new RuntimeException(e);
         }
     }

@@ -1,6 +1,6 @@
 package org.example.comparators.forUniversities;
 
-import org.example.University;
+import org.example.entities.University;
 import org.example.interfaces.UniversityComparatorInterface;
 
 public class UniversityMainProfileComparator implements UniversityComparatorInterface {

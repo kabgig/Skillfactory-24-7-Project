@@ -1,6 +1,8 @@
 package org.example;
 
 import com.google.gson.annotations.SerializedName;
+import org.example.entities.Entity;
+import org.example.entities.StudyProfile;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

@@ -1,7 +1,7 @@
 package org.example.comparators;
 
-import org.example.Student;
-import org.example.University;
+import org.example.entities.Student;
+import org.example.entities.University;
 import org.example.comparators.forStudents.StudentAvgExamScoreComparator;
 import org.example.comparators.forStudents.StudentCurrentCourseNumberComparator;
 import org.example.comparators.forStudents.StudentFullnameComparator;

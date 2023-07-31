@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.entities.Student;
+import org.example.entities.University;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

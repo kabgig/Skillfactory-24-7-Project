@@ -2,6 +2,7 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.example.entities.Entity;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -33,15 +34,4 @@ public class JsonUtil {
     public static <E extends Entity> List<E> deSerializeJsonsList(List<String> JsonList, Class<E> clazz){
         return JsonList.stream().map(Json -> deserializeJson(Json,clazz)).toList();
     }
-
-
-    //--------------
-
-//    public static Entity deserializeJson(String entityJson, Class<? extends Entity> clazz){
-//        return getGson().fromJson(entityJson, clazz);
-//    }
-//
-//    public static List<? extends Entity> deSerializeJsonsList(List<String> JsonList, Class<? extends Entity> clazz){
-//        return JsonList.stream().map(Json -> deserializeJson(Json,clazz)).toList();
-//    }
 }

@@ -1,6 +1,6 @@
 package org.example.comparators.forStudents;
 
-import org.example.Student;
+import org.example.entities.Student;
 import org.example.interfaces.StudentComparatorInterface;
 
 public class StudentAvgExamScoreComparator implements StudentComparatorInterface {

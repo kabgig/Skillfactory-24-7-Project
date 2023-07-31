@@ -1,13 +1,16 @@
 package org.example;
 
+import org.example.entities.Student;
+import org.example.entities.University;
 import org.example.writers.JsonWriter;
 import org.example.writers.XmlWriter;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.LogManager;
+
+import static org.example.Lgr.logger;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,38 +21,30 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//----------------
+
+// GET STATISTICS----------------
         List<Student> students = new StudentReader().readInfo();
         List<University> universities = new UniversityReader().readInfo();
 
         StatUtil statUtil = new StatUtil();
         List<Statistics> statistics = statUtil.processStats(students, universities);
         new XlsWriter().generateTable(statistics, "ResultTable.xlsx");
-//----------------
+
+// GENERATING XML & JSON----------------
         Root root = new Root();
-
         root.setLocalDateTime(LocalDateTime.now());
-
         root.setStudentList(students);
         root.setUniversitiesInfo(universities);
         root.setStatisticalInfo(statistics);
 
-
-        XmlWriter w = new XmlWriter();
-        w.write(root);
+        XmlWriter xmlWriter = new XmlWriter();
+        xmlWriter.write(root);
 
         JsonWriter jsonWriter = new JsonWriter();
         jsonWriter.write(root);
+        logger.info("FINISHED SUCCESSFULLY");
 
-        //-----test
-        List<String> studentJsons = JsonUtil.serializeList(new StudentReader()
-                .readInfo())
-                //.peek(System.out::println)
-                .toList();
-        List<Student> entities = JsonUtil.deSerializeJsonsList(studentJsons, Student.class);
-        entities.stream().forEach(System.out::println);
-
-
+        //------------------------
 
 //        System.out.println("""
 //        4. В методе main выполнить сериализацию коллекций, вывести получившиеся JSON-строки в консоль.
